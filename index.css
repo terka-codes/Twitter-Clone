@@ -1,0 +1,258 @@
+:root{
+    --page-background: #E0E0E0;
+    --card-background: #fff;
+    --twitter-blue: rgb(29, 155, 240);
+    --twitter-blue-to-white: rgb(29, 155, 240);
+    --twitter-blue-darker: #0D95E7;
+    --twitter-blue-lighter: #ECF7FE;
+    --icons-grey: #999;
+    --liked-red: #e61a2b;
+    --card-shadow: rgba(144, 144, 144, 0.5);
+    --light-dark-theme-icon: #000;
+    --tweet-border: #E0E0E0;
+    --user-handle: #555;
+    --text-color: #000;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+    background: var(--page-background);
+    display: flex;
+    color: var(--text-color);
+}
+
+.card {
+    margin: 0 auto;
+    height: 100%;
+    min-height: 100vh;
+    padding: 10px 60px;
+    background: var(--card-background);
+    box-shadow: 1px 1px 20px 1px var(--card-shadow);
+}
+
+/* =========== typography and icons =========== */
+
+h1{
+    color: var(--twitter-blue-to-white);
+    font-size: 24px;
+}
+
+i{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.fa-solid{
+    color: var(--icons-grey);
+}
+
+.liked{
+    color: var(--liked-red);
+}
+
+.retweeted {
+  color: limegreen;
+}
+
+/* =========== layout =========== */
+
+main, header{
+    width: 360px;
+    margin: 0 auto;
+}
+
+header{
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode{
+    color: var(--light-dark-theme-icon);
+}
+
+.tweet-input-area{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* =========== textareas + btn =========== */
+
+textarea{
+    resize: none;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    height: 60px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 26px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    overflow: auto;
+    outline: none;
+    border: 2px solid var(--card-shadow);
+    border-radius: 20px;
+}
+
+.tweet-btn{
+    background-color: var(--twitter-blue);
+    border: none;
+    color: white;
+    padding: 10px 19px;
+    border-radius: 20px;
+    width: 100%; 
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tweet-btn:hover{
+    background-color: var(--twitter-blue-darker);
+    transition: .15s;
+}
+
+.load-more{
+    display: flex;
+    background: var(--card-background);
+    margin: 15px auto 15px auto;
+    border: 1px solid var(--twitter-blue-to-white);
+    color: var(--twitter-blue-to-white);
+    padding: 9px 26px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.load-more:hover{
+    background: var(--twitter-blue-lighter);
+    transition: .15s;
+}
+
+.load-more-div{
+    margin: 40px 0;
+}
+
+/* =========== tweet =========== */
+
+.tweet{
+    border-top: 1px solid var(--tweet-border);
+    padding: 20px 0 0 0;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.tweet-inner{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tweet-details{
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    font-size: 13px;
+    width: 290px;
+}
+
+.tweet-detail{
+    display: flex;
+    gap: 4px;
+}
+
+.tweet-reply{
+    border-top: 1px solid var(--tweet-border);
+    padding: 20px 0 0 0px;
+    margin: 10px 0 10px 40px;
+    width: 90%;
+}
+
+.handle{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--user-handle);
+    margin-top: 0;
+}
+
+.tweet-text{
+    width: 290px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.reply-input-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply-input-area textarea {
+    width: 74%;
+    margin: 0;
+}
+
+.reply-button-div {
+    display: flex;
+    align-items: flex-end;
+}
+
+.reply-button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reply-btn {
+    width: 72%;
+    margin: 5px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* =========== images =========== */
+
+.profile-pic{
+    border: 1px solid var(--tweet-border);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+/* =========== utility =========== */
+.hidden{
+    display: none !important;
+}
+
+/* =========== alert message =========== */
+.tweets-alert{
+    display: none;
+    text-align: center;
+    margin: 20px 0 15px 0;
+    color: var(--twitter-blue-to-white);
+    opacity: 0;
+    transition: .6s ease opacity, .6s ease transform;
+}
+
+/* =========== dark mode =========== */
+
+.darkmode{
+    --page-background: #15202B;
+    --card-background: #15202B;
+    --twitter-blue-to-white: #fff;
+    --twitter-blue-lighter: #101821;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --light-dark-theme-icon: #ffffff;
+    --tweet-border: #415467;
+    --user-handle: #1DA1F2;
+    --text-color: #fff;
+}
+
+
